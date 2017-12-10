@@ -7,7 +7,11 @@ with open('input_2.1.txt', 'r') as f:
         line = line.strip()
         if len(line) > 0:
             numbers = map(int, line.split('\t'))
-            checksum += (max(numbers) - min(numbers))
+            for x in numbers:
+                for y in numbers:
+                    if (x != y):
+                        if (x % y == 0):
+                            checksum = checksum + x / y
 
 print checksum
 
