@@ -7,16 +7,6 @@ with open(fname) as f:
     content = f.readlines()
 content = [line.strip() for line in content]
 
-def distance(line1, line2):
-    to = min(len(line1), len(line2))
-    distance = 0
-    last_diff_index = 0
-    for x in range(0, to):
-        if (line1[x] != line2[x]):
-            distance += 1
-            last_diff_index = x
-    return (distance, last_diff_index)
-
 twos = 0
 threes = 0
 for line in content:
@@ -38,7 +28,16 @@ def part2():
                 return key[0] + key[1]
             hasher.add(key)
 print part2()
-            
+
+#def distance(line1, line2):
+#    to = min(len(line1), len(line2))
+#    distance = 0
+#    last_diff_index = 0
+#    for x in range(0, to):
+#        if (line1[x] != line2[x]):
+#            distance += 1
+#            last_diff_index = x
+#    return (distance, last_diff_index)
 #for x in range(0, len(content)):
 #    for y in range(x + 1, len(content)):
 #        line = content[x]
